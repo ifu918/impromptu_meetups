@@ -1,0 +1,51 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Activity #<%= @activity.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/activities" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/activities/<%= @activity.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit activity
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_activity/<%= @activity.id %>" class="btn btn-block btn-outline-secondary">
+          Delete activity
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Description
+      </dt>
+      <dd>
+        <%= @activity.description %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@activity.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@activity.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+

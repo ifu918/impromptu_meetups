@@ -1,0 +1,58 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Friendship #<%= @friendship.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/friendships" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/friendships/<%= @friendship.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit friendship
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_friendship/<%= @friendship.id %>" class="btn btn-block btn-outline-secondary">
+          Delete friendship
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Friend 1
+      </dt>
+      <dd>
+        <%= @friendship.friend_1_id %>
+      </dd>
+
+      <dt>
+        Friend 2
+      </dt>
+      <dd>
+        <%= @friendship.friend_2_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@friendship.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@friendship.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+

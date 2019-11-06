@@ -1,0 +1,26 @@
+<h1>
+  Edit activity #<%= @activity.id %>
+</h1>
+
+<hr>
+
+<form action="/update_activity/<%= @activity.id %>" method="post">
+
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+
+    <input type="text" id="description" name="description" class="form-control" value="<%= @activity.description %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update activity
+  </button>
+</form>
+
+<hr>
+
+<a href="/activities">
+  Go back
+</a>

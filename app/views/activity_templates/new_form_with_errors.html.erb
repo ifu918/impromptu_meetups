@@ -1,0 +1,37 @@
+<% if @activity.present? %>
+  <% if @activity.errors.any? %>
+    <% @activity.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new activity
+</h1>
+
+
+<hr>
+
+<form action="/create_activity" method="post">
+
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+
+    <input type="text" id="description" name="description" class="form-control" value="<%= @activity.description %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create activity
+  </button>
+</form>
+
+<hr>
+
+<a href="/activities">
+  Go back
+</a>

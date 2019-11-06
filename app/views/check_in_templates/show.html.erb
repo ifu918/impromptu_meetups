@@ -1,0 +1,72 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Check in #<%= @check_in.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/check_ins" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/check_ins/<%= @check_in.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit check in
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_check_in/<%= @check_in.id %>" class="btn btn-block btn-outline-secondary">
+          Delete check in
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @check_in.user %>
+      </dd>
+
+      <dt>
+        Checkin time
+      </dt>
+      <dd>
+        <%= @check_in.checkin_time %>
+      </dd>
+
+      <dt>
+        Description
+      </dt>
+      <dd>
+        <%= @check_in.description %>
+      </dd>
+
+      <dt>
+        Location
+      </dt>
+      <dd>
+        <%= @check_in.location %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@check_in.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@check_in.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+

@@ -1,0 +1,34 @@
+<h1>
+  Edit friendship #<%= @friendship.id %>
+</h1>
+
+<hr>
+
+<form action="/update_friendship/<%= @friendship.id %>" method="post">
+
+  <div class="form-group">
+    <label for="friend_1_id">
+      Friend 1
+    </label>
+
+    <input type="text" id="friend_1_id" name="friend_1_id" class="form-control" value="<%= @friendship.friend_1_id %>">
+  </div>
+
+  <div class="form-group">
+    <label for="friend_2_id">
+      Friend 2
+    </label>
+
+    <input type="text" id="friend_2_id" name="friend_2_id" class="form-control" value="<%= @friendship.friend_2_id %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update friendship
+  </button>
+</form>
+
+<hr>
+
+<a href="/friendships">
+  Go back
+</a>

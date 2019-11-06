@@ -1,0 +1,58 @@
+<% if @check_in.errors.any? %>
+  <% @check_in.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit check in #<%= @check_in.id %>
+</h1>
+
+<hr>
+
+<form action="/update_check_in/<%= @check_in.id %>" method="post">
+
+  <div class="form-group">
+    <label for="user">
+      User
+    </label>
+
+    <input type="text" id="user" name="user" class="form-control" value="<%= @check_in.user %>">
+  </div>
+
+  <div class="form-group">
+    <label for="checkin_time">
+      Checkin time
+    </label>
+
+    <input type="text" id="checkin_time" name="checkin_time" class="form-control" value="<%= @check_in.checkin_time %>">
+  </div>
+
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+
+    <input type="text" id="description" name="description" class="form-control" value="<%= @check_in.description %>">
+  </div>
+
+  <div class="form-group">
+    <label for="location">
+      Location
+    </label>
+
+    <input type="text" id="location" name="location" class="form-control" value="<%= @check_in.location %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update check in
+  </button>
+</form>
+
+<hr>
+
+<a href="/check_ins">
+  Go back
+</a>

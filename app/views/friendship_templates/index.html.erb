@@ -1,0 +1,89 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All friendships
+    </h1>
+
+    <a href="/friendships/new" class="btn btn-block btn-outline-secondary">
+      Add a new friendship
+    </a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-3">
+    <%= render partial: "friendship_templates/friendships_search_form" %>
+  </div>
+</div>
+
+
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Friend 1
+        </th>
+
+        <th>
+          Friend 2
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @friendships.each do |friendship| %>
+      <tr>
+        <td>
+          <%= friendship.id %>
+        </td>
+
+        <td>
+          <%= friendship.friend_1_id %>
+        </td>
+
+        <td>
+          <%= friendship.friend_2_id %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(friendship.created_at) %> ago
+        </td>
+
+        <td>
+          <%= time_ago_in_words(friendship.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/friendships/<%= friendship.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <%= paginate @friendships, theme: "twitter-bootstrap-4" %>
+      </div>
+    </div>
+
+  </div>
+</div>
